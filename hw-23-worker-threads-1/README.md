@@ -1,0 +1,1 @@
+in the console run "node index.js 100" (or any other number to calculate factorial);
