@@ -1,0 +1,1 @@
+run "node index.js echo Hello from Node!" or "node index.js any-other-cmd args"
