@@ -1,0 +1,22 @@
+{
+  "name": "hw-24-round-robin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "express.js",
+  "scripts": {
+    "prestart-http": "npm run stop-all",
+    "start-http": "concurrently \"node worker.js 3001\" \"node worker.js 3002\" \"node worker.js 3003\" \"node loadbalancer-http.js\"",
+    "prestart-express": "npm run stop-all",
+    "start-express": "concurrently \"node worker.js 3001\" \"node worker.js 3002\" \"node worker.js 3003\" \"node loadbalancer-express.js\"",
+    "stop-all": "node kill-all.js",
+    "test": "npx autocannon -c 20 -d 10 http://localhost:3000"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
