@@ -4,8 +4,8 @@ https://dbdiagram.io/d/Hotel-booking-MySql-681774021ca52373f5624d12
 # Hotel Booking API
 crete .env file in the root folder with the following content
 MYSQL_HOST=db
-MYSQL_USER=user
-MYSQL_PASSWORD=admin
+MYSQL_USER=root
+MYSQL_PASSWORD=root
 MYSQL_DATABASE=hotel_db
 MYSQL_ROOT_PASSWORD=root
 PORT=5000
