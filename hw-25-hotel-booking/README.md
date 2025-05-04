@@ -10,7 +10,7 @@ MYSQL_DATABASE=hotel_db
 MYSQL_ROOT_PASSWORD=root
 PORT=5000
 
-run "docker-compose up -d"
+run "docker-compose up --build -d"
 
 API endpoints:
 
