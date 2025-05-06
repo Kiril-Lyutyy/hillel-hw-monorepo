@@ -18,4 +18,13 @@ app.use('/api/courses', coursesRoutes);
 app.use('/api/enrollments', enrollmentRoutes);
 app.use('/api/analytics', analyticsRoutes);
 
+app.use((_req, res, _next) => {
+  res.status(404).json({ error: 'Not found' });
+});
+
+app.use((err, _req, res, _next) => {
+  console.error('Unhandled error:', err);
+  res.status(500).json({ error: 'Something went wrong' });
+});
+
 module.exports = app;

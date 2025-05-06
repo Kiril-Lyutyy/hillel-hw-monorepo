@@ -10,6 +10,3 @@ MYSQL_PORT_EXPOSE=3307
 PORT=5000
 
 docker-compose up --build -d
-
-
-
