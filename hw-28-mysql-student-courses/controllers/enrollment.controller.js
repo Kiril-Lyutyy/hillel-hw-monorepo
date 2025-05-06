@@ -26,6 +26,7 @@ exports.getEnrollmentById = async (req, res) => {
 
 exports.createEnrollment = async (req, res) => {
     const { student_id, course_id, grade } = req.body;
+    
     try {
         const newEnrollment = await enrollmentModel.createEnrollment({ student_id, course_id, grade });
         res.status(201).json(newEnrollment);
@@ -38,6 +39,7 @@ exports.createEnrollment = async (req, res) => {
 exports.deleteEnrollment = async (req, res) => {
     try {
         const deleted = await enrollmentModel.deleteEnrollment(req.params.id);
+
         if (deleted) {
             res.status(200).json({ message: 'Enrollment deleted successfully' });
         } else {

@@ -7,11 +7,13 @@ const getAllEnrollments = async () => {
          JOIN Students ON Enrollments.student_id = Students.id
          JOIN Courses ON Enrollments.course_id = Courses.id`
     );
+    
     return rows;
 };
 
 const getEnrollmentById = async (id) => {
     const [rows] = await db.query('SELECT * FROM Enrollments WHERE id = ?', [id]);
+    
     return rows[0];
 };
 
@@ -20,11 +22,13 @@ const createEnrollment = async ({ student_id, course_id, grade }) => {
         'INSERT INTO Enrollments (student_id, course_id, grade) VALUES (?, ?, ?)',
         [student_id, course_id, grade]
     );
+
     return { id: result.insertId, student_id, course_id, grade };
 };
 
 const deleteEnrollment = async (id) => {
     const [result] = await db.query('DELETE FROM Enrollments WHERE id = ?', [id]);
+
     return result.affectedRows > 0;
 };
 

@@ -3,9 +3,24 @@ const studentRoutes = require('./routes/student.routes.js');
 const coursesRoutes = require('./routes/courses.routes.js');
 const enrollmentRoutes = require('./routes/enrollment.routes');
 const analyticsRoutes = require('./routes/analytics.routes');
+const swaggerUi = require('swagger-ui-express');
+const swaggerJsdoc = require('swagger-jsdoc');
 require('dotenv').config();
 
 const app = express();
+
+const swaggerSpec = swaggerJsdoc({
+  definition: {
+    openapi: '3.0.0',
+    info: {
+      title: 'Student Courses API',
+      version: '1.0.0',
+    },
+  },
+  apis: ['./routes/*.js'],
+});
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use(express.json());
 
