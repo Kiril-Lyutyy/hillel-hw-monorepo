@@ -17,9 +17,9 @@ const seed = async () => {
     ]);
 
     const products = await Product.insertMany([
-      { name: 'iPhone 17', price: 1199, stock: 10, category: categories[0].name },
+      { name: 'iPhone 17', price: 1199, stock: 10, category: categories[0].name, sold: 1 },
       { name: 'MacBook Pro', price: 2399, stock: 5, category: categories[1].name },
-      { name: 'USB-C Cable', price: 19, stock: 100, category: categories[2].name },
+      { name: 'USB-C Cable', price: 19, stock: 100, category: categories[2].name, sold: 3 },
     ]);
 
     const order1Items = [
