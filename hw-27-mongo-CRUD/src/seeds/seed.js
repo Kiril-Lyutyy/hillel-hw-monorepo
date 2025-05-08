@@ -11,6 +11,8 @@ const seed = async () => {
       { name: 'Artem', age: 23, group: 'C-11', marks: [95, 92, 88] },
       { name: 'Alina', age: 20, group: 'B-12', marks: [80, 87, 90] }
     ]);
+
+    console.log('MongoDB seeded successfully!');
   } catch (error) {
     console.error('Error seeding database:', error);
   }
