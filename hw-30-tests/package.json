@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cross-env NODE_ENV=test MONGO_URI='mongodb://localhost/test' jest --detectOpenHandles"
+    "test": "dotenv -e .env.test -- jest --detectOpenHandles"
   },
   "author": "",
   "license": "ISC",
@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
+    "dotenv-cli": "^8.0.0",
     "jest": "^29.7.0",
     "mongodb-memory-server": "^10.1.4",
     "supertest": "^7.1.0"

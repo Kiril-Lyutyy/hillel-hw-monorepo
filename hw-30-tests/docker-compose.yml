@@ -26,10 +26,24 @@ services:
       - mongo
     networks:
       - backend
+      
+  api-test:
+    build: .
+    container_name: store-api-test
+    environment:
+      - NODE_ENV=test
+      - MONGO_URI=mongodb://mongo:27017/test
+    volumes:
+      - .:/app
+      - /app/node_modules
+    depends_on:
+      - mongo
+    networks:
+      - backend
+    command: ["npm", "test"]
 
 volumes:
   mongo_data:
 
 networks:
   backend:
-  
