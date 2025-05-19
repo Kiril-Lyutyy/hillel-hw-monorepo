@@ -1,0 +1,35 @@
+services:
+  mongo:
+    image: mongo:6.0
+    container_name: mongo-db
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - backend
+
+  api:
+    build: .
+    container_name: store-api
+    restart: always
+    ports:
+      - ${PORT}:${PORT}
+    environment:
+      - MONGO_URI=${MONGO_URI}
+      - PORT=${PORT}
+    volumes:
+      - .:/app
+      - /app/node_modules
+    depends_on:
+      - mongo
+    networks:
+      - backend
+
+volumes:
+  mongo_data:
+
+networks:
+  backend:
+  
