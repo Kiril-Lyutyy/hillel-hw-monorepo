@@ -17,7 +17,7 @@ RESTful API using Node.js + Express + MongoDB. CRUD-operations for students.
 1. Clone repo:
 ```bash
 git clone https://github.com/Kiril-Lyutyy/hillel-hw-monorepo.git
-cd hw-27-mongo-CRUD
+cd hw-31-mongo-CRUD-readme-docs
 ```
 
 2. Create .env in the root folder:
