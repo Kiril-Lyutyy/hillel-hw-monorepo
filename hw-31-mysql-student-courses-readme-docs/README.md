@@ -1,30 +1,37 @@
-# HW-31: Mongo CRUD API
+# HW-31: A Node.js + MySQL REST API for managing students, courses, and enrollments.
 
 ## Description
 
-RESTful API using Node.js + Express + MongoDB. CRUD-operations for students.
+RESTful API using Node.js + Express + MySQL. CRUD-operations for students, courses and enrollments.
 
 ## Tech Stack
 
 - Node.js
 - Express.js
-- MongoDB
+- MySQL
 - Swagger (docs)
 - Docker (optional)
+
+## Database Schema
+View the schema on dbdiagram.io https://dbdiagram.io/d/Students-Courses-68189e101ca52373f57d9095
 
 ## Getting Started
 
 1. Clone repo:
 ```bash
 git clone https://github.com/Kiril-Lyutyy/hillel-hw-monorepo.git
-cd hw-31-mongo-CRUD-readme-docs
+cd hw-31-mysql-student-courses-readme-docs
 ```
 
 2. Create .env in the root folder:
 ```bash
-NODE_ENV=development
+MYSQL_HOST=db
+MYSQL_DATABASE=online_courses
+MYSQL_USER=admin
+MYSQL_PASSWORD=admin
+MYSQL_PORT=3306
+MYSQL_PORT_EXPOSE=3307
 PORT=5000
-MONGO_URI=mongodb://mongo:27017/store
 ```
 3. Run the project:
 ```bash
@@ -34,13 +41,13 @@ docker-compose up --build
 ## Project Structure
 ```bash
 src/
-├── config/
+├── init/
 ├── controllers/
 ├── routes/
 ├── models/
-├── seeds/
 ├── app.js
-└── swagger.js
+├── server.js
+└── db.js
 ```
 ## API Documentation
 
